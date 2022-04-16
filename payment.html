@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment page</title>
+    <style>
+        form{
+            display:flex;
+            flex-direction:column;
+        }
+        input{
+            padding:10px;
+            margin:10px;
+        }
+        select{
+            padding:10px;
+            margin:10px;
+            background-color:honeydew;
+        }
+        body>div{
+          width:40%;
+          margin:auto;
+          padding:20px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        }
+        body>div>h1{
+            text-align:center;
+            color:cadetblue;
+        }
+        #payment{
+            border-radius:16px;
+            color:aliceblue;
+            background-color:darkslategrey
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Enter Payment Details</h1>
+        <form action="">
+            <input type="number" placeholder="enter your card number" id="cardno">
+            <input type="text" placeholder="enter your name" id="name">
+            <input type="text" placeholder="enter your address" id="address">
+            <select name="" id="countries">
+                <option value="select">select</option>
+                <option value="india">india</option>
+                <option value="russia">russia</option>
+                <option value="japan">japan</option>
+                <option value="USA">USA</option>
+                <option value="others">Others</option>
+            </select>
+            <div>
+                <input type="text" placeholder="city" id="city">
+                <select name="" id="countries">
+                    <option value="select">select</option>
+                    <option value="india">india</option>
+                    <option value="russia">russia</option>
+                    <option value="japan">japan</option>
+                    <option value="USA">USA</option>
+                    <option value="others">Others</option>
+                </select>
+                <input type="number" id="zipcode" placeholder="zipcode">
+            </div>
+            <input type="submit" value="complete payment" id="payment">
+        </form>
+    </div>
+</body>
+<script>
+    document.querySelector("form").addEventListener('submit',paymentfn);
+    function paymentfn(){
+        event.preventDefault();
+       var cardno= document.querySelector("#cardno").value;
+       var name= document.querySelector("#name").value;
+       var address= document.querySelector("#address").value;
+       var country= document.querySelector("#countries").value;
+       var city= document.querySelector("#city").value;
+       var zipcode= document.querySelector("#zipcode").value;
+       if(cardno!=undefined){
+           console.log("hi");
+           document.querySelector("h1").innerText="Working";
+           window.location.href="./otp.html";
+       }else{
+           window.alert("please enter all fields");
+       }
+    }
+</script>
+</html>
