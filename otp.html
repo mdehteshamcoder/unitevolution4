@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .otp{
+            display: flex;
+            width: 100%;
+            height: 30%;
+            margin: auto;
+            margin-left: 300px;
+             margin-top: 100px; 
+        }
+    </style>
+</head>
+<body style="background:rgb(185, 185, 194)">
+    <div class="otp">
+    <form action="">
+        <input type="number" placeholder="Enter OTP" id="otp">
+        <input type="submit" value="submit">
+    </form>
+    </div>
+</body>
+<script>
+    document.querySelector("form").addEventListener("submit",otpfn)
+    function otpfn(){
+        var res=document.querySelector("#otp").value;
+      if(res==1234){
+        alert("Payment success");
+      }else{
+          alert("Payment Failed");
+      }
+    }  
+</script>
+</html>
