@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body>form{
+            margin:auto;
+            display:flex;
+            flex-direction:column;
+            width:40%;
+            padding:30px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            background-color:white;
+            
+        }
+        body{
+            background-color:azure
+        }
+        input{
+            margin:20px;
+            padding:10px;
+        }
+        #submit{
+            background-color: cadetblue;
+            border-radius:16px;
+            border:0px;
+        }
+        body>h1{
+            color:blueviolet;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Checkout</h1>
+    <form action="">
+        <input type="email" id="email" placeholder="Enter your email">
+        <input type="number" id="phonenm" placeholder="Enter your phoneno">
+        <input type="address" id="address" placeholder="Enter your address">
+        <input type="adhhar" id="adhaar" placeholder="Enter your adhhar no">
+        <input type="password" id="password" placeholder="enter your password">
+        <input type="submit" value="register" id="submit">
+    </form>
+    <div id="container2">
+
+    </div>
+</body>
+<script>
+    document.querySelector("form").addEventListener("submit",signupfn);
+    var userdata;
+    if(localStorage.getItem("userdata")==null){
+        userdata=[];
+    }else{
+        userdata=JSON.parse(localStorage.getItem("userdata"));
+    }
+    
+    function signupfn(){
+        var userobj={
+            email:document.querySelector("#email").value,
+            phoneno:document.querySelector("#phonenm").value,
+            address:document.querySelector("#address").value,
+            adhaar:document.querySelector("#adhaar").value,
+            password:document.querySelector("#password").value,
+            
+        }
+        userdata.push(userobj);
+        localStorage.setItem("userdata",JSON.stringify(userdata));
+        window.location.href="./index.html";
+        alert("successfully signedup");
+    }
+   
+</script>
+</html>
